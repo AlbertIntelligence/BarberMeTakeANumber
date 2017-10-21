@@ -250,6 +250,9 @@ constructor(private routerLink: Router) {
           'uid': 'notAvailable'
         }
       );
+      alert('Your Name as been added to the list. Thank you for using BarberMe!');
+      this.firstName = null;
+      this.lastName = null;
     }
 
   }

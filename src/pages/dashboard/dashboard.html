@@ -2,71 +2,28 @@
   <!-- Main Navbar-->
   <header class="header">
     <nav class="navbar">
-      <!-- Search Box-->
-      <div class="search-box">
-        <button class="dismiss"><i class="icon-close"></i></button>
-        <form id="searchForm" action="#" role="search">
-          <input type="search" placeholder="What are you looking for..." class="form-control">
-        </form>
-      </div>
+
       <div class="container-fluid">
         <div class="navbar-holder d-flex align-items-center justify-content-between">
           <!-- Navbar Header-->
           <div class="navbar-header">
             <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
-            <div class="brand-text brand-big hidden-lg-down"><span>BarberMe </span><strong> Dashboard</strong></div>
-            <div class="brand-text brand-small"><strong>BD</strong></div></a>
+            <div class="brand-text brand-big hidden-lg-down"><span>BarberMe </span><strong> Prendre un ticket</strong></div>
+            <div class="brand-text brand-small"><strong>BM</strong></div></a>
             <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
           </div>
-          <!-- Navbar Menu -->
-          <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-            <!-- Logout    -->
-            <li class="nav-item"><a (click)="logout()" class="nav-link logout">Logout<i class="fa fa-sign-out"></i></a></li>
-          </ul>
+
+
         </div>
       </div>
     </nav>
   </header>
   <div class="page-content d-flex align-items-stretch">
-    <!-- Side Navbar -->
-    <nav class="side-navbar">
-      <!-- Sidebar Header-->
-      <div class="sidebar-header d-flex align-items-center">
-        <div class="avatar"><img src="../../assets/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
-        <div class="title">
-          <h1 class="h4">Mario St-Hubert</h1>
-          <p>Barber</p>
-        </div>
-      </div>
-      <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
-      <ul class="list-unstyled">
-        <li class="active"> <a href=""><i class="icon-home"></i>Home</a></li>
-        <li class="active"> <a routerLink="settings"><i class="icon-padnote"></i>Settings</a></li>
-      </ul>
-    </nav>
-    <div class="content-inner">
-      <!-- Page Header-->
-      <header class="page-header">
-        <div class="container-fluid">
-          <h2 class="no-margin-bottom">Dashboard</h2>
-        </div>
-      </header>
-
-      <!-- Take a number Section-->
-      <!--<section class="projects no-padding-bottom">
-        <div class="container-fluid">
-
-          <div class="row">
-            <h3 class="h4">Take a number</h3>
-          </div>
-          <div class="row">
-            <div class="col-lg-6">Test</div>
-            <div class="col-lg-6">Test</div>
-          </div>
 
 
-        </div>
-      </section>-->
+    <div class="container-fluid">
+
+
 
 
 
@@ -75,126 +32,40 @@
         <div class="container-fluid">
           <div class="row">
 
-            <div class="col-lg-6">
+            <div class="col-lg-12">
               <div class="card">
-                <div class="card-close">
-                  <div class="dropdown">
-                    <button type="button" id="closeCard" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
-                    <div aria-labelledby="closeCard" class="dropdown-menu has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
-                  </div>
-                </div>
-                <div class="card-header d-flex align-items-center">
-                  <h3 class="h4">Ticket List</h3>
-                </div>
                 <div class="card-body">
                   <table class="table table-striped">
                     <thead>
                     <tr>
-                      <th><button (click)="takeANumber()" class="btn btn-primary btn-responsive">Take a number</button></th>
-                      <th><input  [(ngModel)]="firstName"  type="text" class="form-control col-xs-1" placeholder="Firstname" ngModel required/></th>
-                      <th><input  [(ngModel)]="lastName"  type="text" class="form-control col-xs-1" placeholder="Lastname" ngModel required/></th>
-                    </tr>
-                    <tr>
-                      <th>List Control</th>
-                      <th><button (click)="nextClient()"  class="btn btn-primary btn-responsive">Next</button></th>
-                      <th><button (click)="moveToStandBy()"  class="btn btn-primary btn-responsive">Standby</button></th>
-                    </tr>
-                    <tr>
-                      <th>#</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-
+                      <th><button (click)="takeANumber()" class="btn btn-primary btn-responsive">Prendre un ticket</button></th>
+                      <th><input  [(ngModel)]="firstName"  type="text" class="form-control col-xs-1" placeholder="Prénom" ngModel required/></th>
+                      <th><input  [(ngModel)]="lastName"  type="text" class="form-control col-xs-1" placeholder="Nom de famille" ngModel required/></th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr scope="row" *ngFor="let ticket of idsTicket;let i = index;">
-                      <th scope="row"  >{{ticket}}</th>
-                      <td>{{firstNamesTicket[i]}}</td>
-                      <td>{{lastNamesTicket[i]}}</td>
-                    </tr>
-                    </tbody>
                   </table>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-6">
-              <div class="card">
-                <div class="card-close">
-                  <div class="dropdown">
-                    <button type="button" id="closeCard" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
-                    <div aria-labelledby="closeCard" class="dropdown-menu has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
-                  </div>
-                </div>
-                <div class="card-header d-flex align-items-center">
-                  <h3 class="h4">Stanby Client</h3>
-                </div>
-                <div class="card-body">
-                  <table class="table table-striped">
-                    <thead>
-                    <tr>
-                      <th>List Control</th>
-                      <th><button (click)="removeFromStandByList()" class="btn btn-primary btn-responsive">Remove Standby</button></th>
-                      <th><input  [(ngModel)]="standByDeleteValue"  type="text" class="form-control col-xs-1" placeholder="# to remove" ngModel required/></th>
-                    </tr>
-                    <tr>
-                      <th>#</th>
-                      <th>First Name</th>
-                      <th>Last Name</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr scope="row" *ngFor="let ticket of idsTicketStandby;let i = index;">
-                      <th scope="row"  >{{i+1}}</th>
-                      <td >{{firstNamesTicketStandby[i]}}</td>
-                      <td>{{lastNamesTicketStandby[i]}}</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+
+
 
           </div>
         </div>
       </section>
 
 
-      <!-- Projects Section-->
-      <section class="projects no-padding-top">
-        <div class="container-fluid">
 
-          <h1>Reservation: </h1>
-          <!-- Project-->
-          <div class="project" *ngFor="let idss of idsReservation;let z = index">
-            <div class="row bg-white has-shadow">
-              <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
-                <div class="project-title d-flex align-items-center">
-                  <div class="text">
-                    <h4 class="h7" >{{firstNamesReservation[z] + " "+ lastNamesReservation[z]}}</h4>
-                  </div>
-                </div>
-                <div class="project-date"><span class="hidden-sm-down" >{{dateReservation[z]}}</span></div>
-              </div>
-              <div class="right-col col-lg-6 d-flex align-items-center">
-                <div class="time"><i class="fa fa-clock-o">{{timeReservation[z]}}</i></div>
-              </div>
-            </div>
-          </div>
-          <div class="row  "> <div class="left-col col-lg-12 d-flex align-items-center justify-content-between"><button (click)="nextAppointments()" class="btn btn-primary btn-responsive">Next</button></div></div>
-
-          <!-- Project-->
-        </div>
-      </section>
 
       <section class="dashboard-counts no-padding-top">
         <div class="container-fluid">
           <div class="row bg-white has-shadow">
             <!-- Item -->
-            <div class="col-xl-6 col-sm-6">
+            <div class="col-xl-12 col-sm-12 ">
               <div class="item d-flex align-items-center">
                 <div class="icon bg-violet"><i class="icon-user"></i></div>
-                <div class="title"><span>Client<br>waiting</span>
+                <div class="title"><span>Client<br>dans la file d'attente</span>
                   <div class="progress">
                     <div role="progressbar" style="width: 25%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-violet"></div>
                   </div>
@@ -202,48 +73,29 @@
                 <div class="number"><strong [innerText]="numberClientWaitingTicketList"></strong></div>
               </div>
             </div>
-            <!-- Item -->
-            <div class="col-xl-6 col-sm-6">
-              <div class="item d-flex align-items-center">
-                <div class="icon bg-red"><i class="icon-padnote"></i></div>
-                <div class="title"><span>Total client<br>reservation waiting</span>
-                  <div class="progress">
-                    <div role="progressbar" style="width: 25%; height: 4px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" class="progress-bar bg-red"></div>
-                  </div>
-                </div>
-                <div class="number"><strong [innerText]="numberClientWaitingReservation"></strong></div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
 
-      <section class="dashboard-counts no-padding-top">
-      <form class="form-horizontal" [formGroup]="adForm" novalidate>
-        <div class="form-group row">
-          <div class="col-sm-12">
-            <input class="form-control input"  type="text" (change)="saveAdChanges()" placeholder="Live Message" formControlName="live">
-          </div>
-        </div>
-      </form>
-      </section>
 
-      <!-- Page Footer-->
-      <footer class="main-footer">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-6">
-              <p>BarberMe Powered By CodeKL &copy; 2017</p>
-            </div>
-            <div class="col-sm-6 text-right">
-              <p>Powered by <a href="https://www.codekl.com" class="external">CodeKL</a></p>
-              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-            </div>
-          </div>
-        </div>
-      </footer>
+
     </div>
   </div>
+  <!-- Page Footer-->
+  <footer class="main-footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">
+          <p>BarberMe Powered By CodeKL &copy; 2017</p>
+        </div>
+        <div class="col-sm-6 text-right">
+          <p>Powered by <a href="https://www.codekl.com" class="external">CodeKL</a></p>
+          <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
 <!--
 <div id="seconDiv" style="margin-top: 20%;margin-bottom: 20%"  >
